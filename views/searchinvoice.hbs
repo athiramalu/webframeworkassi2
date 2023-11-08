@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  <h1>{{title}}</h1>
+
+  <form action="/search/invoiceID" method="post">
+    <label for="invoiceID">Enter Invoice ID:</label>
+    <input type="text" name="invoiceID" id="invoiceID" required>
+    <button type="submit">Search</button>
+  </form>
+
+  {{#if invoiceDetails}}
+    <div class="search-result">
+      <h2>Search Results for "{{invoiceDetails.[Invoice ID]}}"</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Invoice ID</th>
+            <th>Product Line</th>
+            <th>Branch</th>
+            <th>City</th>
+            <th>Product Image</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Payment</th>
+            <th>COGS</th>
+            <th>Rating</th>
+            <th>Customer Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{invoiceDetails.[Invoice ID]}}</td>
+            <td>{{invoiceDetails.[Product line]}}</td>
+            <td>{{invoiceDetails.Branch}}</td>
+            <td>{{invoiceDetails.City}}</td>
+            {{!-- <td><img src="{{invoiceDetails.image}}" alt="Product Image"></td> --}}
+            
+            <td><img src="{{invoiceDetails.image}}" alt="Product Image" height="100" width="80"></td>
+            <td>{{invoiceDetails.Quantity}}</td>
+            <td>{{invoiceDetails.Total}}</td>
+            <td>{{invoiceDetails.Date}}</td>
+            <td>{{invoiceDetails.Time}}</td>
+            <td>{{invoiceDetails.Payment}}</td>
+            <td>{{invoiceDetails.cogs}}</td>
+            <td>{{invoiceDetails.Rating}}</td>
+            <td>{{invoiceDetails.[Customer type]}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  {{else}}
+    {{#if errorMessage}}
+      <div class="error">
+        <p><strong>{{errorMessage}}</strong></p>
+      </div>
+    {{/if}}
+  {{/if}}
+</body>
+</html>

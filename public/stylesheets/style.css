@@ -1,0 +1,134 @@
+body {
+  padding: 0;
+  margin: 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+/* Header Section Styles */
+.header {
+  background-color: #e98181;
+  color: rgb(203, 185, 185);
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  border-bottom: 5px solid #c94c4c;
+}
+
+.header:hover {
+  background-color: #492e2e;
+  border-color: #b83a3a;
+}
+
+/* Content Section Styles */
+.content {
+  padding: 20px;
+  transition: transform 0.3s ease;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Section Styles */
+.footer {
+  background-color: hsl(0, 38%, 94%);
+  color: hsl(0, 0%, 85%);
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  border-top: 5px solid hsl(0, 38%, 80%);
+}
+
+.footer:hover {
+  background-color: #492e2e;
+  border-color: #b83a3a;
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th,
+td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+/* Additional Styles */
+.highlight {
+  background-color: #a2852f;
+}
+
+/* Styles for 'searchInvoice.hbs' */
+form {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+button[type="submit"] {
+  padding: 8px 15px;
+  background-color: #e98181;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button[type="submit"]:hover {
+  background-color: #b83a3a;
+}
+
+.search-result {
+  margin-top: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+img {
+  max-width: 100px;
+  height: auto;
+ 
+  margin-bottom: 10px;
+}

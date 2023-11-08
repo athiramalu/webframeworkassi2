@@ -1,0 +1,107 @@
+{{!-- //qn8 --}}
+{{!-- <h1>{{title}}</h1>
+<table class="sales-table">
+    <thead>
+        <tr>
+            <th>Invoice ID</th>
+            <th>Branch</th>
+            <th>City</th>
+            <th>Customer Type</th>
+            <th>Product Line</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Unit Price</th>
+            <th>Quantity</th>
+            <th>Tax 5%</th>
+            <th>Total</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Payment</th>
+            <th>COGS</th>
+            <th>Gross Income</th>
+            <th>Rating</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each salesData}}
+            {{#if (compare this.Rating 0)}}
+                <tr class="highlight-zero">
+            {{else}}
+                <tr>
+            {{/if}}
+                <td>{{this.[Invoice ID]}}</td>
+                <td>{{this.Branch}}</td>
+                <td>{{this.City}}</td>
+                <td>{{this.[Customer Type]}}</td>
+                <td>{{this.[Product Line]}}</td>
+                <td>{{this.Name}}</td>
+                <td><img src="{{this.Image}}" alt="Product Image" height="100" width="80"></td>  
+                <td>{{this.[Unit Price]}}</td>
+                <td>{{this.Quantity}}</td>
+                <td>{{this.[Tax 5%]}}</td>
+                <td>{{this.Total}}</td>
+                <td>{{this.Date}}</td>
+                <td>{{this.Time}}</td>
+                <td>{{this.Payment}}</td>
+                <td>{{this.COGS}}</td>
+                <td>{{this.[Gross Income]}}</td>
+                <td>{{replaceRating this.Rating}}</td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table> --}}
+
+
+
+
+{{!-- //questuion9 --}}
+<h1>{{title}}</h1>
+ <link rel='stylesheet' href='/stylesheets/style.css' />
+<table class="sales-table">
+    <thead>
+        <tr>
+            <th>Invoice ID</th>
+            <th>Branch</th>
+            <th>City</th>
+            <th>Customer Type</th>
+            <th>Product Line</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Unit Price</th>
+            <th>Quantity</th>
+            <th>Tax 5%</th>
+            <th>Total</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Payment</th>
+            <th>COGS</th>
+            <th>Gross Income</th>
+            <th>Rating</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each salesData}}
+            <tr {{#if (compare this.Rating 0)}}class="highlight"{{/if}}>
+                <td>{{this.[Invoice ID]}}</td>
+                <td>{{this.Branch}}</td>
+                <td>{{this.City}}</td>
+                <td>{{this.[Customer type]}}</td>
+                <td>{{this.[Product line]}}</td>
+                <td>{{this.name}}</td>
+                <td><img src="{{this.image}}" alt="Product Image" height="100" width="80"></td>
+                <td>{{this.[Unit price]}}</td>
+                <td>{{this.Quantity}}</td>
+                <td>{{this.[Tax 5%]}}</td>
+                <td>{{this.Total}}</td>
+                <td>{{this.Date}}</td>
+                <td>{{this.Time}}</td>
+                <td>{{this.Payment}}</td>
+                <td>{{this.cogs}}</td>
+                <td>{{this.[gross income]}}</td>
+                <td style="{{#if (compare this.Rating 0)}}color: blue; font-weight: bold;{{/if}}">
+                    {{replaceRating this.Rating}}
+                </td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>

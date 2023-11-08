@@ -1,0 +1,35 @@
+<h1>{{title}}</h1>
+
+<form action="/search/productline" method="post">
+  <label for="productline">Enter Product Line:</label>
+  <input type="text" name="productline" id="productline" required>
+  <button type="submit">Search</button>
+</form>
+
+{{#if productlineInfo}}
+  <div class="search-result">
+    <h2>Search Results for "{{searchedFor}}"</h2>
+    <ul>
+      {{#each productlineInfo}}
+        <li>
+          <h2>{{this.name}}</h2>
+          <p><strong>Product Line:</strong> {{this.[Product line]}}</p>
+          <p><strong>Invoice ID:</strong> {{this.[Invoice ID]}}</p>
+          <p><strong>Branch:</strong> {{this.Branch}}</p>
+          <p><strong>City:</strong> {{this.City}}</p>
+          {{!-- <img src="{{this.image}}" alt="Product Image"> --}}
+          
+                <img src="{{this.image}}" alt="Product Image" height="100" width="80">
+          <p><strong>Quantity:</strong> {{this.Quantity}}</p>
+          <p><strong>Total:</strong> {{this.Total}}</p>
+          <p><strong>Date:</strong> {{this.Date}}</p>
+          <p><strong>Time:</strong> {{this.Time}}</p>
+          <p><strong>Payment:</strong> {{this.Payment}}</p>
+          <p><strong>COGS:</strong> {{this.cogs}}</p>
+          <p><strong>Rating:</strong> {{this.Rating}}</p>
+          <p><strong>Customer Type:</strong> {{this.[Customer type]}}</p>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+{{/if}}
